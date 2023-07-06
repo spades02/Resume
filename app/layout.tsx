@@ -1,7 +1,7 @@
+import Resume from '../components/Resume'
+import Sidebar from '../components/Sidebar'
+import { skills } from '../data/page-data'
 import './globals.css'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -15,7 +15,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className='flex flex-col sm:flex-row'>
+        <Sidebar />
+
+        <main className='grow-full p-16 basis-2/3 bg-green ml-auto'>
+          <Resume data = {skills} />
+        {children}
+        </main>
+        </body>
     </html>
   )
 }
