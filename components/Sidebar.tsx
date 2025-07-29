@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from 'next/image'
-import dp from '../public/file.jpg'
 import { FaFacebookSquare, FaTwitterSquare, FaGithubSquare, FaLinkedin } from 'react-icons/fa';
 import { FaSquareUpwork } from "react-icons/fa6";
 
@@ -15,7 +14,7 @@ export default function Sidebar() {
             height={200}
             width={200}
             aria-label='abdullahs'
-            src={dp}
+            src={"/file.jpg"}
             alt='abdullah'
             className='rounded-full h-full m-8'
         />
