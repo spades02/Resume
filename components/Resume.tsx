@@ -36,8 +36,8 @@ export default function Resume({data} :any) {
       <h1 className='font-bold font-mono text-xl'>My Projects</h1>
       <div className="p-6">
       <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 text-white">
-        {projects.map((project, idx) => (
-          <ProjectCard key={idx} project={project} />
+        {projects.map((project, index) => (
+          <ProjectCard key={project.id || index} project={project} />
         ))}
       </div>
     </div>
