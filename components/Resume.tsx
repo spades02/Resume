@@ -1,21 +1,18 @@
 "use client";
+import projects from "@/data/projects";
 import { useState } from "react"
 import React from 'react'
+import ProjectCard from "./ProjectCard";
 
 export default function Resume({data} :any) {
-  const [activeTab, setActiveTab] = useState("soft");
+  const [activeTab, setActiveTab] = useState("hard");
   const setBg = (active: any) => (activeTab === active ? 'bg-yellow-300' : 'bg-gray-200');
   const skill = (active: any) => (activeTab === active ? 'visible' : 'collapse');
   return (
-    <div className =''>
-        <div className=''>
-            <h1 className='font-bold font-mono text-xl'>About Me</h1>
-            <p className='font-medium font-mono'>I am a dedicated student of Software Engineering at Bahria University, where I am pursuing my passion for coding and building a strong foundation in the field. With a lifelong love for computers that began during my childhood, when I frequently played video games, I have developed a deep interest in software development and am eager to embark on a continuous learning journey as a software engineer.</p>
-            <br />
-            <p className='font-medium font-mono'>In addition to my academic pursuits, I am an average CS:GO player. I also have a keen interest in cricket, which not only helps me maintain a balanced lifestyle but also instills discipline and teamwork. Moreover, I devote time to improving my physical fitness, recognizing its importance for overall well-being and mental clarity.</p>
-            <br />
-            <p className='font-medium font-mono'>Furthermore, I actively engage in the world of cryptocurrency trading, managing a small account. This experience has provided me with insights into the dynamic nature of the financial market and the ability to analyze and make informed decisions in a rapidly evolving industry.</p>
-        </div>
+    <div className='max-h-screen'>
+      <h1 className='font-bold font-mono text-xl'>About Me</h1>
+      <p className='font-medium font-mono'>I am a Software Engineer graduated from Bahria University with a strong passion for coding, problem-solving, and building scalable software. My journey began in childhood with a fascination for computers and games, which evolved into a commitment to continuous learning in the world of development.
+</p>
       <div className='grid grid-cols-2 mt-4'>
         <button key = {"hard"} type = 'button' onClick={() =>setActiveTab("hard")} className={`${setBg("hard")} p-2 px-6 text-2xl text-left font-bold uppercase`}>
           Hard Skills
@@ -35,7 +32,16 @@ export default function Resume({data} :any) {
 
         </ul>
       </div>
-     
+     <div className="mt-2">
+      <h1 className='font-bold font-mono text-xl'>My Projects</h1>
+      <div className="p-6">
+      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 text-white">
+        {projects.map((project, idx) => (
+          <ProjectCard key={idx} project={project} />
+        ))}
+      </div>
+    </div>
+     </div>
 
     </div>
   )

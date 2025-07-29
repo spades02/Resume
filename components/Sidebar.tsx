@@ -2,6 +2,9 @@ import React from 'react'
 import Image from 'next/image'
 import dp from '../public/file.jpg'
 import { FaFacebookSquare, FaTwitterSquare, FaGithubSquare, FaLinkedin } from 'react-icons/fa';
+import { FaSquareUpwork } from "react-icons/fa6";
+
+
 
 export default function Sidebar() {
   return (
@@ -27,6 +30,7 @@ export default function Sidebar() {
                   <a className='icons-contact-me' href="https://twitter.com/TraderSpades"><FaTwitterSquare /></a>
                   <a className='icons-contact-me' href="https://github.com/spades02"><FaGithubSquare /></a>
                   <a className='icons-contact-me' href="https://www.linkedin.com/in/abdullah-zahid-53bbb426a/"><FaLinkedin /></a>
+                  <a className='icons-contact-me' href="https://www.upwork.com/freelancers/~01c3b2de2bbb8d19b4"><FaSquareUpwork /></a>
             </div>
         </div>
         </div>
