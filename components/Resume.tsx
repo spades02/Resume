@@ -23,14 +23,13 @@ export default function Resume({data} :any) {
       </div>
       <div>
         <ul className={`flex flex-row flex-wrap content-start list-none gap-2 mt-2 ${activeTab === "soft" ? 'justify-end': 'justify-start'}`}>
-          {data[activeTab].map(({icon, text} :any)=>(
-            <li className="bg-gray-200 py-2 px-4 text-md font-mono w-fit rounded-md">
-              <span> {icon}</span> {text}
-            </li>
-          ))}
+  {data[activeTab].map(({icon, text}: any) => (
+    <li key={text} className="bg-gray-200 py-2 px-4 text-md font-mono w-fit rounded-md">
+      <span>{icon}</span> {text}
+    </li>
+  ))}
+</ul>
 
-
-        </ul>
       </div>
      <div className="mt-2">
       <h1 className='font-bold font-mono text-xl'>My Projects</h1>
